@@ -29,10 +29,18 @@ label {
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f4f4f4;
+  background-color: #1b1b1d;
   color: #333;
   margin: 0;
   padding: 0;
+}
+
+#home {
+  background-color: #712cf9;
+}
+
+#footer {
+  background-color: #2b3035;
 }
 
 header,
@@ -94,6 +102,19 @@ main {
   footer {
     padding: 20px 0;
   }
+}
+
+#table-form,
+#data-table,
+#temp-conversion,
+#fahrenheit {
+  background-color: #444950;
+  color: #aeb2b6;
+}
+
+#floatingInput,
+#floatingTextarea2 {
+  background-color: #323234;
 }
 
 /* Tablet */

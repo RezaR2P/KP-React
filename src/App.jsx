@@ -1,46 +1,16 @@
-import { useState } from "react";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+import Form from "react-bootstrap/Form";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./assets/css/style.css";
-
+import Button from "react-bootstrap/Button";
 import rengeImage from "./assets/img/renge.jpg";
 import nyanpasuImage from "./assets/img/Nyanpasu.jpg";
 
 function App() {
-  const [formData, setFormData] = useState({
-    nama: "",
-    email: "",
-    number: "",
-    komentar: "",
-  });
-
-  const [fahrenheit, setFahrenheit] = useState("");
-  const [celsius, setCelsius] = useState(null);
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
-  };
-
-  const handleConversion = (e) => {
-    e.preventDefault();
-    const fah = parseFloat(fahrenheit);
-    if (!isNaN(fah)) {
-      setCelsius(((fah - 32) * 5) / 9);
-    }
-  };
-
   return (
-    <div className="App md-12">
-      <header id="home" className="bg-dark text-white text-center py-4">
+    <>
+      <header id="home" className=" text-white text-center py-4">
         <img
           src={rengeImage}
           alt="Logo"
@@ -78,68 +48,55 @@ function App() {
           </a>
         </div>
 
-        <form
-          onSubmit={handleSubmit}
-          id="table-form"
-          className="bg-white p-4 rounded shadow-sm"
-        >
-          <div className="form-group">
-            <label htmlFor="nama">Nama</label>
-            <input
-              type="text"
-              name="nama"
-              id="nama"
-              className="form-control"
-              value={formData.nama}
-              onChange={handleInputChange}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <input
+        <form id="table-form" className=" p-4 rounded shadow-sm">
+          <FloatingLabel
+            controlId="floatingInput"
+            label="Masukkan Nama"
+            className="mb-3"
+          >
+            <Form.Control type="text" placeholder="Masukkan Nama" required />
+          </FloatingLabel>
+          <FloatingLabel
+            controlId="floatingInput"
+            label="Email address"
+            className="mb-3"
+          >
+            <Form.Control
               type="email"
-              name="email"
-              id="email"
-              className="form-control"
-              value={formData.email}
-              onChange={handleInputChange}
+              placeholder="name@example.com"
+              required
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
             />
-          </div>
-          <div className="form-group">
-            <label htmlFor="number">No HP</label>
-            <input
+          </FloatingLabel>
+
+          <FloatingLabel
+            controlId="floatingInput"
+            label="Masukkan No HP"
+            className="mb-3 bg-dark"
+          >
+            <Form.Control
               type="text"
-              name="number"
-              id="number"
+              placeholder="No HP"
               pattern="\d{12,}"
               required
-              className="form-control"
-              value={formData.number}
-              onChange={handleInputChange}
-              onInput={(e) =>
-                (e.target.value = e.target.value.replace(/[^0-9]/g, ""))
-              }
             />
-          </div>
-          <div className="form-group">
-            <label htmlFor="komentar">Komentar</label>
-            <textarea
-              name="komentar"
-              id="komentar"
-              cols="20"
-              rows="2"
-              className="form-control"
-              value={formData.komentar}
-              onChange={handleInputChange}
-            ></textarea>
-          </div>
-          <button type="submit" className="btn btn-dark">
-            Kirim
-          </button>
+          </FloatingLabel>
+          <FloatingLabel controlId="floatingTextarea2" label="Komentar">
+            <Form.Control
+              as="textarea"
+              placeholder="Tinggalkan Komen Di sini..."
+              style={{ height: "100px" }}
+            />
+          </FloatingLabel>
+          <Button variant="primary" type="submit" className="mt-3">
+            Submit
+          </Button>
         </form>
-
-        <table id="services" className="table table-striped mt-5">
-          <thead className="thead-dark">
+        <table
+          id="services"
+          className="table table-dark table-hover table-bordered rounded table-striped mt-5"
+        >
+          <thead className="" id="data-head">
             <tr>
               <th>Nama</th>
               <th>Email</th>
@@ -150,38 +107,22 @@ function App() {
           </thead>
           <tbody id="data-table">{/* Table rows go here */}</tbody>
         </table>
-        <div
-          id="temp-conversion"
-          className="bg-light p-4 rounded shadow-sm mt-5"
-        >
+        <div id="temp-conversion" className=" p-4 rounded shadow-sm mt-5">
           <h3>Convert Fahrenheit to Celsius</h3>
-          <form onSubmit={handleConversion} id="conversion-form">
+          <form id="conversion-form">
             <div className="form-group">
               <label htmlFor="fahrenheit">Fahrenheit</label>
-              <input
-                type="text"
-                id="fahrenheit"
-                className="form-control"
-                value={fahrenheit}
-                onChange={(e) => setFahrenheit(e.target.value)}
-                onInput={(e) =>
-                  (e.target.value = e.target.value.replace(/[^0-9.]/g, ""))
-                }
-              />
+              <input type="text" id="fahrenheit" className="form-control" />
             </div>
-            <button type="submit" className="btn btn-dark mt-2">
-              Convert
-            </button>
+            <Button variant="primary" type="submit" className="mt-3">
+              Submit
+            </Button>
           </form>
-          {celsius !== null && (
-            <div id="result" className="mt-3">
-              {fahrenheit} Fahrenheit is {celsius.toFixed(2)} Celsius
-            </div>
-          )}
+          <div id="result" className="mt-3"></div>
         </div>
       </main>
 
-      <footer id="contact" className="bg-dark text-white text-center py-4">
+      <footer id="footer" className="bg-dark text-white text-center py-4">
         <p id="copyright">
           Created with <i className="bi bi-suit-heart-fill text-danger"></i> by
           <a
@@ -194,7 +135,7 @@ function App() {
         </p>
         <div id="clock" className="mt-1"></div>
       </footer>
-    </div>
+    </>
   );
 }
 
