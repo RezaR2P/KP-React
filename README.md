@@ -10,7 +10,6 @@ Proyek ini adalah aplikasi web sederhana yang dibangun dengan React yang mencaku
 - [Tangkapan Layar](#tangkapan-layar)
 - [Teknologi yang Digunakan](#teknologi-yang-digunakan)
 - [Berkontribusi](#berkontribusi)
-- [Lisensi](#lisensi)
 - [Kontak](#kontak)
 
 ## Instalasi
