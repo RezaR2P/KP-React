@@ -40,7 +40,7 @@ Proyek ini adalah aplikasi web sederhana yang dibangun dengan React yang mencaku
 
 ## Penggunaan
 
-1. Buka browser Anda dan pergi ke http://localhost:3000.
+1. Buka browser Anda dan pergi ke http://localhost:5173/
 2. Isi formulir dengan nama, email, nomor telepon, dan komentar Anda.
 3. Klik tombol "Kirim" untuk mengirimkan formulir.
 4. Gunakan konverter suhu untuk mengkonversi Fahrenheit ke Celsius dengan memasukkan.
@@ -70,7 +70,7 @@ Proyek ini adalah aplikasi web sederhana yang dibangun dengan React yang mencaku
 
 ![Suhu](./src/assets/img/suhu.png)
 
-## Technologies Used
+## Teknologi yang Digunakan
 
 - React: Library JavaScript untuk membangun antarmuka pengguna.
 - Bootstrap: Framework CSS untuk desain responsif.
