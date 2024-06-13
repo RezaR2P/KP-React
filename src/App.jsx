@@ -88,7 +88,7 @@ function App() {
               style={{ height: "100px" }}
             />
           </FloatingLabel>
-          <Button variant="primary" type="submit" className="mt-3">
+          <Button variant="dark" type="submit" className="mt-3">
             Submit
           </Button>
         </form>
@@ -114,7 +114,7 @@ function App() {
               <label htmlFor="fahrenheit">Fahrenheit</label>
               <input type="text" id="fahrenheit" className="form-control" />
             </div>
-            <Button variant="primary" type="submit" className="mt-3">
+            <Button variant="dark" type="submit" className="mt-3">
               Submit
             </Button>
           </form>
@@ -126,11 +126,12 @@ function App() {
         <p id="copyright">
           Created with <i className="bi bi-suit-heart-fill text-danger"></i> by
           <a
+            style={{ textDecoration: "none" }}
             href="https://github.com/RezaR2P"
             data-toggle="tooltip"
             title="Visit my GitHub profile"
           >
-            RezaR2P
+            <span style={{ color: "white" }}> RezaR2P</span>
           </a>
         </p>
         <div id="clock" className="mt-1"></div>
