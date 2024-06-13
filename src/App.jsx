@@ -1,16 +1,16 @@
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./assets/css/style.css";
-import Button from "react-bootstrap/Button";
 import rengeImage from "./assets/img/renge.jpg";
 import nyanpasuImage from "./assets/img/Nyanpasu.jpg";
 
 function App() {
   return (
     <>
-      <header id="home" className=" text-white text-center py-4">
+      <header id="home" className="text-white text-center py-4">
         <img
           src={rengeImage}
           alt="Logo"
@@ -48,16 +48,16 @@ function App() {
           </a>
         </div>
 
-        <form id="table-form" className=" p-4 rounded shadow-sm">
+        <form id="table-form" className="p-4 rounded shadow-sm">
           <FloatingLabel
-            controlId="floatingInput"
+            controlId="floatingName"
             label="Masukkan Nama"
             className="mb-3"
           >
             <Form.Control type="text" placeholder="Masukkan Nama" required />
           </FloatingLabel>
           <FloatingLabel
-            controlId="floatingInput"
+            controlId="floatingEmail"
             label="Email address"
             className="mb-3"
           >
@@ -68,11 +68,10 @@ function App() {
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
             />
           </FloatingLabel>
-
           <FloatingLabel
-            controlId="floatingInput"
+            controlId="floatingHp"
             label="Masukkan No HP"
-            className="mb-3 bg-dark"
+            className="mb-3"
           >
             <Form.Control
               type="text"
@@ -81,22 +80,27 @@ function App() {
               required
             />
           </FloatingLabel>
-          <FloatingLabel controlId="floatingTextarea2" label="Komentar">
+          <FloatingLabel controlId="floatingTextArea" label="Komentar">
             <Form.Control
               as="textarea"
               placeholder="Tinggalkan Komen Di sini..."
               style={{ height: "100px" }}
             />
           </FloatingLabel>
-          <Button variant="dark" type="submit" className="mt-3">
+          <Button
+            type="submit"
+            className="mt-3 w-100 text-black "
+            style={{ backgroundColor: "#CCD0D5" }}
+          >
             Submit
           </Button>
         </form>
+
         <table
           id="services"
           className="table table-dark table-hover table-bordered rounded table-striped mt-5"
         >
-          <thead className="" id="data-head">
+          <thead id="data-head">
             <tr>
               <th>Nama</th>
               <th>Email</th>
@@ -107,14 +111,19 @@ function App() {
           </thead>
           <tbody id="data-table">{/* Table rows go here */}</tbody>
         </table>
-        <div id="temp-conversion" className=" p-4 rounded shadow-sm mt-5">
-          <h3>Convert Fahrenheit to Celsius</h3>
+
+        <div id="temp-conversion" className="p-4 rounded shadow-sm mt-5">
+          <h3 id="conversion-title">Convert Fahrenheit to Celsius</h3>
           <form id="conversion-form">
             <div className="form-group">
               <label htmlFor="fahrenheit">Fahrenheit</label>
               <input type="text" id="fahrenheit" className="form-control" />
             </div>
-            <Button variant="dark" type="submit" className="mt-3">
+            <Button
+              type="submit"
+              className="mt-3 w-100 text-black "
+              style={{ backgroundColor: "#CCD0D5" }}
+            >
               Submit
             </Button>
           </form>
